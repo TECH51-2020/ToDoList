@@ -1,0 +1,45 @@
+<div class="jumbotron" style="padding:45px 0px">
+    <h4 class="text-center">To Do List App</h4>
+</div>
+
+<div class="input-group">
+    <input  type="task" class="form-control" #itemTitle>
+    <div class="input-group-addon hover-cursor" (click)="onAdd(itemTitle)">
+        <i class="fa fa-plus-circle fa-2x"></i>
+    </div>
+</div>
+
+<div style="margin:5px 0px">
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let item of toDoListArray" >
+            <span class="hover-cursor" [class.text-success]="item.isChecked" (click)="alterCheck(item.$key,item.isChecked)">
+                <i class="fa fa-lg" [ngClass]="item.isChecked? 'fa-check-circle-o':'fa-circle-thin'"></i>
+            </span>
+            {{item.title}}
+            <span class="hover-cursor text-danger pull-right" (click)="onDelete(item.$key)">
+                <i class="fa fa-trash-o fa-lg"></i>
+            </span>
+        </li>
+    </ul>
+</div>
+
+<div id="container">
+  
+    <div class="controls">
+      <button class="sort nofloat" data-sort="random" (click)="shuffleArray(toDoListArray)">Randomize</button>
+    </div>
+    
+    <div class="mix position-1 category-2" data-myorder="1">AC/DC</div>
+    <div class="mix position-2 category-1 clear" data-myorder="2">Tame Impala</div>
+    <div class="mix position-3 category-1" data-myorder="3">Interpol</div>
+    <div class="mix position-4 category-2 clear" data-myorder="4">Steely Dan</div>
+    <div class="mix position-5 category-2" data-myorder="5">Alabama Shakes</div>
+    <div class="mix position-6 category-1 clear" data-myorder="6">Ride</div>
+    <div class="mix position-7 category-1" data-myorder="7">Nero</div>
+    <div class="mix position-8 category-1" data-myorder="8">Azealia Banks</div>
+    <div class="mix position-9 category-1 clear" data-myorder="9">Flying Lotus</div>
+    <div class="mix position-10 category-1" data-myorder="10">Lykke Li</div>
+    <div class="mix position-11 category-2" data-myorder="11">Caribou</div>
+  </div>
+
+  

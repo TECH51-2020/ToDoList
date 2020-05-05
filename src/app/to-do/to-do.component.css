@@ -1,0 +1,86 @@
+
+.jumbotron {
+    background-color: rgb(184, 184, 184);
+}
+@import 'bourbon';
+
+red1 #ee0f37
+red2 #d40f65
+magenta #bb0f90
+purple  #940fd0
+purple-blue #5665f5
+blue #4a88f5
+
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  padding: 2em;
+  font-family: Helvetica Neue, Arial, sans-serif;
+  background: #ececec;
+}
+#container {
+  max-width: 800px;
+}
+.controls {
+  padding: 2em 0;
+  button :
+    color #777;
+    border: none;
+    background: #ccc;
+    border-radius: 18px;
+    padding: .5em 1em;
+    margin: 0 .5em .75em 0;
+    letter-spacing: .05em;
+    outline: none;
+  }
+
+.mix {
+  display: inline-block;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin: 0 4px 4px 0;
+  vertical-align: bottom;
+  float: left;
+}
+.mix:before{
+  content: attr(data-myorder);
+  color: white;
+  font-size: em(8);
+  display: inline-block;
+  margin-right: .75em;
+}
+.mix {
+  display: none;
+}
+.clear {
+  clear: both;
+}
+.position-1 {
+  @include linear-gradient(red1, red2);
+  padding: 1.75em 6em .25em .5em;
+  font-size: rem(44);
+}
+.position-2, .position-3 {
+  @include linear-gradient(red2, magenta);
+  padding: 1.5em 6em .25em .75em;
+  font-size: rem(28);
+} 
+.position-4, .position-5 {
+  @include linear-gradient(magenta, purple);
+  padding: 1.5em 6em .25em .75em;
+  font-size: rem(22);
+}
+.position-6, .position-7, .position-8 {
+  @include linear-gradient(purple, purple-blue);
+  padding: 1em 6em .25em .75em;
+  font-size: rem(18);
+}
+.position-9, .position-10, .position-11 {
+  @include linear-gradient(purple-blue, blue);
+  padding: 1em 6em .4em .75em;
+  font-size: rem(13);
+}
